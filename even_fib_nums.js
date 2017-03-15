@@ -5,13 +5,30 @@
  * @param  {Number} maxFibValue
  * @return {Number} sum
  */
-function _sumFibs( maxFibValue ) {
+function _sumFibs(maxFibValue) {
   var sum = 0;
+  var prev = 0;
+  var curr = 1;
+  var next = 1;
 
-  // do your work here
+  if (maxFibValue <= 0){
+    return undefined;
+  }
+  else{
+    while (next <= maxFibValue){
+      prev = curr;
+      curr = next;
+      next = prev + curr;
 
+      if (curr % 2 === 0){
+        sum += curr;
+      }
+    }
+
+  }
   return sum;
 }
+
 
 // bonus round
 function _highestFibonacciNumber (maxFibValue){
